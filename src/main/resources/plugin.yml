@@ -1,0 +1,36 @@
+name: VirnorWatchdog
+version: '${project.version}'
+main: com.virnor.watchdog.VirnorWatchdog
+api-version: '1.21'
+authors: [ Virnor ]
+description: Oyuncu izleme ve moderasyon plugini
+website: virnor.com
+softdepend: [ Essentials ]
+
+commands:
+  wd:
+    description: VirnorWatchdog ana komutu
+    usage: /wd <spec|ban|mute|history> <oyuncu>
+    aliases: [watchdog, virnorwd]
+
+permissions:
+  virnorwatchdog.spec:
+    description: Oyunculari izleme yetkisi
+    default: op
+  virnorwatchdog.ban:
+    description: Oyunculari banlama yetkisi
+    default: op
+  virnorwatchdog.mute:
+    description: Oyunculari susturma yetkisi
+    default: op
+  virnorwatchdog.history:
+    description: Oyuncu gecmisini goruntuleme yetkisi
+    default: op
+  virnorwatchdog.admin:
+    description: Tum yetkilere sahip olma
+    default: op
+    children:
+      virnorwatchdog.spec: true
+      virnorwatchdog.ban: true
+      virnorwatchdog.mute: true
+      virnorwatchdog.history: true

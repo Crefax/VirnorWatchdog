@@ -1,0 +1,178 @@
+# VirnorWatchdog Configuration
+# Developer: Crefax
+
+# Mesajlar
+messages:
+  prefix: "&8[&cVirnor&fWatchdog&8]&r "
+  no-permission: "&cBu komutu kullanmak icin yetkiniz yok!"
+  player-not-found: "&cOyuncu bulunamadi!"
+  spec-start: "&aIzleme modu baslatildi: &e{player}"
+  spec-mode: "&aGizli mod aktif! Envanterdeki yatak ile cikin."
+  spec-stop: "&aIzleme modu sonlandirildi."
+  ban-success: "&a{player} oyuncusu banlandı! Sebep: &e{reason}"
+  mute-success: "&a{player} oyuncusu susturuldu! Sebep: &e{reason}"
+  already-spectating: "&cZaten bir oyuncuyu izliyorsunuz!"
+
+# Ban Sebepleri ve Sureleri (dakika cinsinden, 0 = kalici)
+ban-reasons:
+  killaura:
+    display-name: "&cKillAura / Aimbot"
+    duration: 4320  # 3 gun
+    command: "ban {player} {duration} {reason}"
+  fly:
+    display-name: "&cFly Hack"
+    duration: 4320  # 3 gun
+    command: "ban {player} {duration} {reason}"
+  speed:
+    display-name: "&cSpeed Hack"
+    duration: 2880  # 2 gun
+    command: "ban {player} {duration} {reason}"
+  xray:
+    display-name: "&cX-Ray / Wallhack"
+    duration: 7200  # 5 gun
+    command: "ban {player} {duration} {reason}"
+  bhop:
+    display-name: "&cBunnyHop / Step"
+    duration: 2880  # 2 gun
+    command: "ban {player} {duration} {reason}"
+  scaffold:
+    display-name: "&cScaffold / Tower"
+    duration: 4320  # 3 gun
+    command: "ban {player} {duration} {reason}"
+  reach:
+    display-name: "&cReach Hack"
+    duration: 3600  # 2.5 gun
+    command: "ban {player} {duration} {reason}"
+  autoclick:
+    display-name: "&cAutoClicker"
+    duration: 2160  # 1.5 gun
+    command: "ban {player} {duration} {reason}"
+  antiknockback:
+    display-name: "&cAnti-Knockback / Velocity"
+    duration: 2880  # 2 gun
+    command: "ban {player} {duration} {reason}"
+  nuker:
+    display-name: "&cNuker / FastBreak"
+    duration: 4320  # 3 gun
+    command: "ban {player} {duration} {reason}"
+  criticals:
+    display-name: "&cCriticals Hack"
+    duration: 2880  # 2 gun
+    command: "ban {player} {duration} {reason}"
+  jesus:
+    display-name: "&cJesus / WaterWalk"
+    duration: 2160  # 1.5 gun
+    command: "ban {player} {duration} {reason}"
+  timer:
+    display-name: "&cTimer Hack"
+    duration: 4320  # 3 gun
+    command: "ban {player} {duration} {reason}"
+  nofall:
+    display-name: "&cNoFall Damage"
+    duration: 1440  # 1 gun
+    command: "ban {player} {duration} {reason}"
+  freecam:
+    display-name: "&cFreeCam / ESP"
+    duration: 5760  # 4 gun
+    command: "ban {player} {duration} {reason}"
+  bot:
+    display-name: "&cBot / Macro Kullanimi"
+    duration: 7200  # 5 gun
+    command: "ban {player} {duration} {reason}"
+  exploit:
+    display-name: "&cBug / Exploit Abuse"
+    duration: 10080  # 7 gun
+    command: "ban {player} {duration} {reason}"
+  other:
+    display-name: "&cDiger Hileler"
+    duration: 1440  # 1 gun
+    command: "ban {player} {duration} {reason}"
+  warning:
+    display-name: "&6Uyari Bani (24 saat)"
+    duration: 1440  # 1 gun
+    command: "ban {player} {duration} {reason}"
+  permanent:
+    display-name: "&4Kalici Ban"
+    duration: 0  # kalici
+    command: "ban {player} {reason}"
+
+# Mute Sebepleri ve Sureleri (dakika cinsinden)
+mute-reasons:
+  spam:
+    display-name: "&eSpam"
+    duration: 60  # 1 saat
+    command: "mute {player} {duration} {reason}"
+  caps:
+    display-name: "&eBuyuk Harf Kullanimi"
+    duration: 30  # 30 dakika
+    command: "mute {player} {duration} {reason}"
+  toxicity:
+    display-name: "&eKotu Sozcuk / Hakaret"
+    duration: 1440  # 1 gun
+    command: "mute {player} {duration} {reason}"
+  advertising:
+    display-name: "&eReklam / Server Tanitimi"
+    duration: 2880  # 2 gun
+    command: "mute {player} {duration} {reason}"
+  flood:
+    display-name: "&eFlood / Tekrar"
+    duration: 120  # 2 saat
+    command: "mute {player} {duration} {reason}"
+  cursing:
+    display-name: "&eKufur / Agir Hakaret"
+    duration: 2880  # 2 gun
+    command: "mute {player} {duration} {reason}"
+  racism:
+    display-name: "&eIrkcilik / Ayrimcilik"
+    duration: 10080  # 7 gun
+    command: "mute {player} {duration} {reason}"
+  threat:
+    display-name: "&eTehdit / DDoS"
+    duration: 7200  # 5 gun
+    command: "mute {player} {duration} {reason}"
+  nsfw:
+    display-name: "&e18+ Icerik Paylasimi"
+    duration: 4320  # 3 gun
+    command: "mute {player} {duration} {reason}"
+  spoiler:
+    display-name: "&eSpoiler / Rahatsiz Etme"
+    duration: 480  # 8 saat
+    command: "mute {player} {duration} {reason}"
+  politics:
+    display-name: "&eSiyaset / Din Tartismasi"
+    duration: 1440  # 1 gun
+    command: "mute {player} {duration} {reason}"
+  begging:
+    display-name: "&eDilenme / Item Isteme"
+    duration: 240  # 4 saat
+    command: "mute {player} {duration} {reason}"
+  impersonation:
+    display-name: "&eKimlik Taklidi"
+    duration: 2880  # 2 gun
+    command: "mute {player} {duration} {reason}"
+  other:
+    display-name: "&eDiger Sebep"
+    duration: 720  # 12 saat
+    command: "mute {player} {duration} {reason}"
+  permanent:
+    display-name: "&6Kalici Mute"
+    duration: 0  # kalici
+    command: "mute {player} {reason}"
+
+# Spectator Ayarlari
+spectator:
+  # Spectator modda gordugunuz vanish'li oyuncular
+  can-see-vanished: true
+  # Essentials vanish kullanan oyuncular sizi gorebilir mi?
+  visible-to-essentials-vanish: false
+  # Spectator modda ucus hizi (1.0 = normal)
+  fly-speed: 2.0
+  # Spectator moddayken envanter acilsin mi?
+  open-inventory: false
+
+# Data kaydetme
+data:
+  # Ban/Mute gecmisi kaydet
+  save-history: true
+  # Gecmiste tutulacak maksimum kayit (oyuncu basina)
+  max-history-per-player: 50
